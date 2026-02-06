@@ -30,10 +30,10 @@ jobs:
 
     
     - name: Descargar JavaFX
-      run  wget https://download2.gluonhq.com/openjfx/21.0.10/openjfx-21.0.10_linux-x64_bin-sdk.zip
+      run wget https://download2.gluonhq.com/openjfx/21.0.10/openjfx-21.0.10_linux-x64_bin-sdk.zip
 
     - name: Descomprimir archivo
-      run  unzip openjfx-21.0.10_linux-x64_bin-sdk.zip -d javafx-sdk
+      run unzip openjfx-21.0.10_linux-x64_bin-sdk.zip -d javafx-sdk
 
     - name: Crear jar
       run jar --create --file=build/HelloWorldFx.jar --manifest=manifest/MANIFEST.MF -C build/ .
