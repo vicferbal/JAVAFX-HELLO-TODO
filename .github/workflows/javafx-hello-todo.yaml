@@ -27,7 +27,7 @@ jobs:
       run: unzip openjfx-21.0.1_linux-x64_bin-sdk.zip -d javafx-sdk
 
     - name: Crear jar
-      run: jar --create --file=build/HelloWorldFx.jar --manifest=manifest/MANIFEST.MF -C build/ .
+      run: jar --create --file=build/HelloWorldFx.jar --manifest=manifest/MANIFEST.MF -d build/ .
 
     - name: Ejecutar jar
       run: java --module-path javafx-sdk/javafx-sdk-21.0.1/lib --add-modules javafx.controls -jar build/HelloWorldFx.jar
