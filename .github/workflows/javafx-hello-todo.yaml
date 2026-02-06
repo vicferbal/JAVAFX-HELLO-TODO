@@ -21,7 +21,7 @@ jobs:
         distribution: 'temurin'
 
     - name: Descargar JavaFX
-      run: wget https://download2.gluonhq.com/openjfx/21.0.10/openjfx-21.0.1_linux-x64_bin-sdk.zip
+      run: wget https://download2.gluonhq.com/openjfx/21.0.1/openjfx-21.0.1_linux-x64_bin-sdk.zip
 
     - name: Descomprimir archivo
       run: unzip openjfx-21.0.1_linux-x64_bin-sdk.zip -d javafx-sdk
@@ -33,7 +33,7 @@ jobs:
       run: jar --create --file=build/HelloWorldFx.jar --manifest=manifest/MANIFEST.MF -C build/ .
 
     - name: Ejecutar jar
-      run: java --module-path javafx-sdk/javafx-sdk-21.0.10/lib --add-modules javafx.controls -jar build/HelloWorldFx.jar
+      run: java --module-path javafx-sdk-21.0.10/lib --add-modules javafx.controls -jar build/HelloWorldFx.jar
 
     - name: Crear ejecutable
       run: jpackage --input build --name HelloWorldFx --main-jar HelloWorldFx.jar --main-class dam.optativa.HelloWorldFx --type deb --module-path javafx-sdk/javafx-sdk-21.0.1/lib --add-modules javafx.controls
