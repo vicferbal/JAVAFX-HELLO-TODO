@@ -33,4 +33,4 @@ jobs:
       run: jar --create --file=build/HelloWorldFx.jar --manifest=manifest/MANIFEST.MF -C build/ .
 
     - name: Crear ejecutable
-      run: jpackage --input build --name HelloWorldFx --main-jar HelloWorldFx.jar --main-class dam.optativa.HelloWorldFx --type deb --module-path javafx-sdk/javafx-sdk-21.0.1/lib --add-modules javafx.controls
+      run: jpackage --input build --name HelloWorldFx --main-jar HelloWorldFx.jar --main-class dam.optativa.HelloWorldFx --type deb --module-path javafx-sdk-21.0.10/lib --add-modules javafx.controls
