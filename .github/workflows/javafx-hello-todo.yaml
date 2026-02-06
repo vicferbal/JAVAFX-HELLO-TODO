@@ -23,11 +23,14 @@ jobs:
     - name: Descargar JavaFX
       run: wget https://download2.gluonhq.com/openjfx/21.0.1/openjfx-21.0.1_linux-x64_bin-sdk.zip
 
+    - name: Compilar
+      run: javac --module-path javafx-sdk-21.0.1/lib --add-modules javafx.controls -d build/ src/dam/optativa/HelloWorldFx.java
+
     - name: Descomprimir archivo
       run: unzip openjfx-21.0.1_linux-x64_bin-sdk.zip -d javafx-sdk
 
     - name: Crear jar
-      run: jar --create --file=build/HelloWorldFx.jar --manifest=manifest/MANIFEST.MF -d build/ .
+      run: jar --create --file=build/HelloWorldFx.jar --manifest=manifest/MANIFEST.MF -C build/ .
 
     - name: Ejecutar jar
       run: java --module-path javafx-sdk/javafx-sdk-21.0.1/lib --add-modules javafx.controls -jar build/HelloWorldFx.jar
